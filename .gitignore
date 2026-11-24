@@ -1,0 +1,14 @@
+# LaTeX build artefacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.run.xml
+*.bcf
+# build output dir (PDF hasil build ada di main.pdf)
+output/
