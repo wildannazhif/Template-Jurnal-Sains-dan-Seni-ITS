@@ -1,0 +1,173 @@
+% main.tex -- Contoh artikel Jurnal Sains dan Seni ITS
+%
+% Isi artikel ini adalah teks template resmi ITS itu sendiri
+% ("Gaya Selingkung dan Template Artikel Ilmiah Jurnal Sains dan Seni ITS"),
+% sehingga PDF hasil kompilasi dapat dibandingkan langsung dengan
+% template resmi (reference/template-its.pdf).
+%
+% Ganti judul, penulis, afiliasi, e-mail, abstrak, kata kunci, dan isi
+% bagian dengan naskah Anda. JANGAN mengubah kelas, margin, huruf,
+% ukuran, spasi, atau penomoran -- semuanya sudah sesuai gaya selingkung.
+%
+% Kompilasi:  ./scripts/build.sh        (atau: latexmk -pdf main.tex)
+%   perlu: pdflatex + bibtex (IEEEtran.bst) -- lihat README.md.
+\documentclass{its-jurnal}
+
+% --- Metadata: isi dengan data artikel Anda -------------------------------
+\title{Gaya Selingkung dan \textit{Template} Artikel Ilmiah\\Jurnal Sains dan Seni ITS}
+\author{Penulis P. Pertama, Penulis K. Kedua, dan Penulis K. Ketiga}
+\affiliation{Afiliasi Penulis}
+\email{penuliskorespodensi@email.com}
+% \runninghead{Vol. 13, No. 2 (2024)}  % isi bila volume/nomor sudah diketahui
+
+\begin{document}
+
+\maketitle
+
+% --- Abstrak: 100-300 kata, satu paragraf, tanpa acuan daftar pustaka -----
+\begin{abstract}
+Yang dimaksud gaya selingkung (\textit{in house style}) adalah tatatulis yang dibakukan oleh penerbit sebuah tulisan agar tulisan-tulisan yang dimuat memiliki kesamaan gaya (\textit{style}). Selanjutnya, \textit{template} adalah sumber baku penulisan ilmiah yang biasanya sudah disediakan dalam bentuk \textit{file} untuk memudahkan penulis memenuhi gaya selingkung yang disyaratkan. Untuk publikasi ilmiah, \textit{file} ini adalah template yang berisi gaya selingkung untuk itu. Tampilan yang ada di dalam template ini, dan juga yang dituliskan penulis, tidak akan mengalami penyuntingan sebelum penerbitan. Berikut adalah gaya selingkung yang dimaksud, dimulai dari Abstrak. Abstrak dituliskan dengan paragraf tunggal. Abstrak mencakup pendahuluan, metode dan hasil yang dicapai, tanpa ada acuan pada daftar pustaka. Abstrak harus menggambarkan penelitian yang dilakukan secara ekplisit dengan kalimat yang lugas dan jelas. Abstrak dan artikel ditulis dalam bahasa Indonesia baku. Panjang abstrak yang disarankan adalah antara 100 hingga 300 kata.
+\end{abstract}
+
+% --- Kata kunci: maksimal 5, urutan alfabet, Title Case -------------------
+\keywords{Tuliskan maksimal 5 buah kata kunci atau frasa menurut urutan alfabet dipisahkan dengan tanda koma dan menggunakan tittlecase}
+
+% ===========================================================================
+\section{Pendahuluan}
+% ===========================================================================
+\lettrine{D}{OKUMEN} ini adalah template untuk Microsoft Word versi 6.0 ke atas. Template ini sengaja diambilkan dan dimodifikasi dari situs IEEE untuk \textit{Preparation of Papers for IEEE TRANSACTIONS and JOURNALS} dengan maksud agar Anda lebih dekat mengenal penulisan artikel ilmiah pada jurnal internasional. Jika Anda membaca versi PDF dari template ini dan hendak menulis artikel, segeralah mengunduh \textit{file} PUBLIKASI\_ITS\_SAINS.DOC seperti yang dicontohkan ini pada situs http://ejurnal.its.ac.id/ sehingga Anda bisa segera menyiapkan manuskrip Anda. Manuskrip adalah naskah dengan format seperti dalam template ini, dalam bentuk yang belum dipublikasikan. Untuk sementara format tulisan hanya tersedia dalam Microsoft Word. Dengan menggunakan template ini, Anda telah membantu media publikasi ini menampilkan seluruh artikel ilmiah secara konsisten.
+
+Setelah membuka \textit{file} PUBLIKASI\_ITS\_SAINS.DOC, Anda bisa segera menulis pada subbagian-subbagian yang menjadi target Anda. Perhatikan bahwa gaya tulisan bagian ini berbeda dengan yang lainnya, terlihat pada \textit{Formatting Toolbar} di atas Word \textit{window} yang pada titik ini berbunyi ``Text''. Sorot bagian yang akan Anda tentukan formatnya, kemudian pilih nama yang sesuai pada menu di atas. Jenis huruf dan jarak spasi akan disesuaikan dengan template. Sangat dianjurkan untuk tidak mengubah bentuk huruf dan jarak spasi untuk menyesuaikan jumlah halaman yang terbatas. Jika Anda hendak membuat penekanan makna, gunakan \textit{italics}, bukan \textit{underline}.
+
+Secara umum, manuskrip disusun dalam subjudul yang terdiri atas PENDAHULUAN, METODE PENELITIAN, HASIL DAN DISKUSI, KESIMPULAN/RINGKASAN. Namun demikian urutan ini dapat disesuaikan dengan bidang ilmu yang ditulis. Di dalam template ini, METODE PENELITIAN dituliskan sebagai URAIAN PENELITIAN dan dapat disesuaikan dengan keperluan Anda. Silakan berkonsultasi dengan dosen pembimbing untuk pemberian judul subbagian ini.
+
+Penulis artikel perlu memperhatikan kemungkinan publikasi lain sehingga terhindar dari duplikasi, potensi paten, munculnya komplain karena menggunakan perangkat lunak ilegal dan melibatkan pihak lain dalam penelitian kerjasama.
+
+Untuk menyisipkan gambar, tempatkan kursor pada titik yang dituju kemudian pilih di antara: \textit{Insert | Picture | From File} atau kopi gambar ke \textit{clipboard} lalu pilih \textit{Edit | Paste Special | Picture} (dengan ``\textit{float over text}'' tidak dicentang).
+
+% ===========================================================================
+\section{Uraian Penelitian}
+% ===========================================================================
+
+\subsection{Tahap Telaah}
+Kumpulkan manuskrip Anda untuk penelaahan. Selanjutnya, \textit{reviewer} akan menelaah manuskrip Anda dan memberikan respon atasnya. Anda wajib melakukan revisi dan kemudian mengumpulkan \textit{file} manuskrip yang telah direvisi (dalam format Word seperti template ini).
+
+\subsection{Tahap Penyuntingan dan Publikasi}
+\textit{File} manuskrip Anda yang dikirim (\textit{submitted}) ke portal e-jurnal ITS http://ejurnal.its.ac.id. akan disunting dan dikonversi ke format PDF, kemudian diunggah (\textit{uploaded}) oleh Tim Redaksi e-jurnal ITS ke alamat situs di atas.
+
+\subsection{Gambar}
+Format dan simpan citra grafis Anda menggunakan program pemrosesan grafis yang sesuai dan legal. Sesuaikan ukuran dan resolusi dari citra tersebut agar setiap tulisan maupun bentuk obyek yang terkandung di dalamnya tetap dapat dibaca atau dibedakan. Gambar hasil fotografi maupun \textit{grayscale} harus disiapkan dalam resolusi 400\,dpi dan disimpan tanpa proses kompresi, 8 \textit{bits} per piksel (\textit{grayscale}).
+
+\noindent{\bfseries Ukuran Gambar dan Tabel}
+
+Biasanya gambar dan tabel ditampilkan dalam lebar 1 kolom (3\,1/2 inci atau 8,89\,cm) atau 2 kolom (7\,1/16 inci, lebar 17,93\,cm). Sebisa mungkin ukuran lebar gambar ataupun tabel tidak kurang dari 1 kolom. Hal ini dikarenakan pembesaran yang terlalu ekstrim dapat mendistorsi gambar dan menghasilkan reproduksi yang berkualitas rendah. Untuk itu adalah lebih baik jika gambar yang hendak ditampilkan berukuran sama atau sedikit lebih besar dari 1 atau 2 kolom.
+
+Jika memungkinkan, gunakan \textit{open type font} (Times Roman, Helvetica, Helvetica Narrow, Courier, Symbol, Palatino, Avant Garde, Bookman, Zapf Chancery, Zapf Dingbats, dan New Century Schoolbook) ketika mencantumkan tulisan di dalam gambar dengan ukuran font 8\,pt.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/gambar-1.png}
+  \caption{Pertukaran isotop oksigen gas dan oksigen dalam patatan katalis perovskit. Biasakan untuk menunjukkan signfikansi dari gambar pada judul gambar (\textit{caption}).}
+  \label{fig:pertukaran-isotop}
+\end{figure}
+
+\subsection{Formulir Copyright}
+Artikel yang siap untuk dipublikasikan harus dilengkapi dengan sebuah formulir \textit{copyright}. Anda dapat mendapatkan formulir ini di http://ejurnal.its.ac.id/. Setiap penulis bertanggung jawab secara pribadi untuk mendapatkan \textit{security clearances} apapun yang dibutuhkan.
+
+% ===========================================================================
+\section{Petunjuk Tambahan}
+% ===========================================================================
+
+\subsection{Gambar dan Tabel}
+Karena tim editor publikasi tidak akan melakukan penyuntingan ulang terhadap posisi dan ukuran dari gambar ataupun tabel yang dicantumkan, Anda hendaknya memastikan bahwa semua gambar dan tabel telah memenuhi kriteria yang telah disebutkan. Gambar dan tabel yang Anda telah atur akan tampil seperti apa adanya pada saat dipublikasikan. Anda disarankan menampilkan gambar dan tabel seperti contoh pada \textit{template} ini.
+
+Judul gambar harus diletakkan pada bagian bawah dari gambar terkait dengan penyelarasan \textit{justify} (lihat contoh). Jika gambar Anda terdiri lebih dari satu bagian, tambahkan label ``(a)'', ``(b)'', dan seterusnya sebagai bagian dari gambar. Jangan memberi garis batas tepi pada gambar. Sementara itu, judul tabel harus diletakkan pada bagian atas tabel dengan penyelarasan tengah. Pastikan bahwa setiap gambar atau tabel yang dirujuk memang benar-benar ada dan setiap gambar atau tabel memang benar-benar dirujuk. Baik gambar maupun tabel diberi nomor menggunakan penomoran arab.
+
+Untuk menuliskan label pada sumbu-sumbu dari sebuah diagram/gambar lebih baik digunakan kata daripada simbol. Pastikan semua simbol maupun kata dapat dibaca (\textit{readable}).
+
+\begin{table}[t]
+  \caption{Nilai \textit{constant ratio} untuk berbagai kombinasi pasangan}
+  \label{tab:constant-ratio}
+  {\footnotesize
+  \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccc@{}}
+    \hline\hline
+    Id & Pasangan & Rata-Rata CR* \\
+    \hline
+    R1 & a -- c1 & 0,0193233 \\
+    R2 & b -- c1 & 0,0132334 \\
+    R3 & c -- c1 & 0,0132334 \\
+    R4 & a -- c2 & 0,2343343 \\
+    R5 & b -- c2 & 0,3423423 \\
+    R6 & c -- c2 & 0,3423443 \\
+    R7 & a -- c3 & 0,0023444 \\
+    R8 & b -- c3 & 0,0200343 \\
+    R9 & c -- c3 & 0,0234443 \\
+    \hline\hline
+  \end{tabular*}
+  \par\vspace{2pt}
+  \noindent Garis vertikal boleh ditambahkan. Pernyataan yang menjelaskan seluruh bagian tabel diletakkan pada judul tabel, tidak pada catatan kaki di sini.
+  \par\noindent\textsuperscript{a}CR -- \textit{Constant ratio}.}
+\end{table}
+
+\subsection{Formula Matematika}
+Jika Anda menggunakan Word, gunakan \textit{Microsoft Equation Editor} untuk menulis setiap rumus atau persamaan yang muncul (\textit{Insert | Object | Create New | Microsoft Equation}). Jangan pilih opsi ``\textit{Float over text}''.
+
+\subsection{Daftar Pustaka}
+Urutan penomoran rujukan menggunakan angka arab di dalam kurung siku \cite{young1964}. Tanda titik dari akhir kalimat diletakkan setelah kurung siku \cite{chen1993}. Rujukan berganda \cite{chen1993}, \cite{poor1985} harus disebutkan dalam kurung siku terpisah \cite{young1964,chen1993,poor1985}. Ketika mensitasi sebuah bagian dalam buku, hendaklah menyebutkan halaman yang dimaksud \cite{chen1993}. Dalam kalimat, cukup merujuk nomor rujukan, seperti \cite{poor1985}. Jangan menggunakan ``Ref.~\cite{poor1985}'' atau ``rujukan \cite{poor1985}'' kecuali pada awal kalimat: ``Rujukan \cite{poor1985} menjelaskan \ldots.''
+
+Jika diperlukan, catatan kaki dapat dibuat secara terpisah dalam \textit{superscripts} (\textit{Insert | Footnote}) dengan nomer berurutan. Letakkan catatan kaki pada bagain terbawah dari kolom di mana dia disitasi; jangan meletakkan catatan kaki pada daftar pustaka (\textit{endnotes}).
+
+Pada bagian akhir dari dokumen ini terdaftar sejumlah contoh penulisan sitasi dalam daftar pustaka yang diharapkan. Sebutkan nama dari setiap penulis dan jangan menggunakan singkatan ``\textit{et al.}'' atau ``\textit{dkk.}''. Gunakan spasi setelah inisial dari penulis. Makalah yang belum dipublikasikan hendaklah disebutkan ``belum dipublikasikan'' \cite{smith}. Makalah yang telah diterima untuk dipublikasikan, akan tetapi belum diketahui nomor publikasinya hendaklah disebutkan ``akan dipublikasikan'' \cite{miller}. Makalah yang telah didaftarkan untuk dipublikasikan hendaklah disebutkan ``didaftarkan untuk dipublikasikan'' \cite{wang}. Hendaklah menyebutkan afiliasi dan alamat untuk setiap komunikasi yang sifatnya pribadi \cite{kaufman}.
+
+Huruf besar hanya pada kata pertama dari setiap judul makalah, kecuali nama dan simbol elemen. Untuk makalah yang dipublikasikan pada jurnal berbahasa selain Indonesia dan Inggris, hendaklah menuliskan judul bahasa indonesia terlebih dahulu kemudian diikuti oleh judul aslinya \cite{yorozu}. Seluruh sumber pustaka yang diacu harus dicantumkan pada Daftar Pustaka, sebaliknya semua sumber pustaka yang dicantumkan pada Daftar Pustaka harus diacu. Daftar Pustaka \cite{young1989}--[30] adalah contoh sumber pustaka dalam bentuk-bentuk selain yang sudah disebutkan di atas.
+
+\subsection{Singkatan dan Akronim}
+Definisikan singkatan dan akronim ketika pertama kali digunakan dalam teks, walaupun telah didefinisikan dalam abstrak. Singkatan yang sudah populer di bidangnya tidak perlu disingkat, seperti IEEE, SI, ac, dan dc (elektronika). Singkatan yang mengandung tanda titik tidak membutuhkan spasi: tulis ``C.N.R.S.,'' bukan ``C. N. R. S.''. Jangan menggunakan singkatan pada judul kecuali tidak dapat dihindari.
+
+\subsection{Persamaan}
+Penomoran persamaan harus bersesuaian dengan urutan kemunculan rumus atau persamaan tersebut dalam teks. Penomoran ditulis dalam tanda kurung dengan menggunakan marjin kanan, seperti dalam \eqref{eq:j}. Anda direkomendasikan untuk menggukan \textit{equation editor} untuk membuat sebuah persamaan. Beri tanda titik pada akhir sebuah persamaan yang merupakan bagian dari sebuah kalimat, seperti yang terdapat pada
+\begin{equation}
+  J(U,V) = \sum_{k=1}^{N}\sum_{i=1}^{c} (u_{ik})^{m}\, D(x_{k}, v_{i})^{2}.
+  \label{eq:j}
+\end{equation}
+dengan semua besaran disajikan penjelasannya setelah persamaan, misal $J$ adalah besaran utama, $i$ dan $k$ menyatakan indeks pada jumlahan; simbol besaran ditulis dengan bentuk huruf \textit{italics}.
+
+Pastikan bahwa setiap simbol dalam persamaan yang Anda sebutkan telah didefinisikan sebelum atau segera setelah persamaan tersebut muncul. Perhatikan bahwa simbol dicetak miring. Sementara itu, satuan dicetak biasa (misal, $T$ dapat merujuk kepada suhu, akan tetapi T merupakan tesla, satuan dari fluks magnet). Rujuk ke ``\eqref{eq:j},'' bukan ``Pers.~(1)'' atau ``persamaan (1),'' kecuali pada awal sebuah kalimat: ``Persamaan \eqref{eq:j} merupakan \ldots.''
+
+\subsection{Rekomendasi Lainnya}
+Hendaknya Anda menggunakan sebuah spasi setelah titik maupun koma. Gunakan penulisan angka baku yang berlaku di Indonesia, misalnya nilai desimal: ``0,25'' bukan ``0.25''. Anda juga dapat menyajikan angka dengan penulisan ilmiah seperti ``2,4$\times$10\textsuperscript{-6}'' dengan simbol pengali ``$\times$'' bukan huruf ``x''. Gunakan satuan besaran menurut Sistem Internasional (SI).
+
+Ketidakpastian (\textit{errors}) hendaknya ditampilkan menurut kaidah baku, yaitu nilai rata-rata dan ketidakpastiannya memiliki angka desimal yang sama, misalnya ``2,58$\pm$0,07'', menggunakan simbol ``$\pm$'' bukan ``+-'' atau ``+/-''. Ketidakpastian dapat juga ditampilkan pada gambar menggunakan garis ketidakpastian (\textit{error bars}).
+
+Pernyataan dalam tanda kurung pada akhir kalimat hendaklah diberi tanda titik setelah tanda kurung penutupnya (seperti ini). (Sebuah pernyataan dalam tanda kurung hendaklah diakhiri dengan tanda titik sebelum tanda kurung penutupnya.)
+
+% ===========================================================================
+\section{Prinsip-Prinsip Publikasi}
+% ===========================================================================
+Isi publikasi \textit{on-line} ini melalui proses telaah oleh tim editor. Beberapa hal yang penting diperhatikan oleh penulis:
+\begin{enumerate}
+  \item Penulis wajib menghindarkan artikelnya dari kemungkinan plagiarisme.
+  \item Jumlah halaman artikel adalah 6-8 dengan ukuran kertas A4.
+  \item Para penulis wajib menjamin bahwa hasil penelitian dan tulisan yang dimuat memenuhi kaidah ilmiah dan standar penulisan ilmiah yang baik. Hasil dari penelitian yang masih berlangsung (\textit{ongoing}) tidak dapat diterima untuk ditampilkan dalam artikel.
+\end{enumerate}
+
+% ===========================================================================
+\section{Kesimpulan/Ringkasan}
+% ===========================================================================
+Tuliskan kesimpulan dari penelitian yang artikelnya Anda tulis ini tanpa mengulang hal-hal yang telah disampaikan di Abstrak. Kesimpulan dapat diisi pula tentang pentingnya hasil yang dicapai dan saran untuk aplikasi dan pengembangannya.
+
+% --- Lampiran & ucapan terima kasih (tanpa nomor) ---------------------------
+\section*{Lampiran}
+Jika ada, lampiran muncul di sini.
+
+\section*{Ucapan Terima Kasih}
+Tuliskan ucapan terima kasih dengan bahasa baku, misalnya, Penulis A.F. mengucapkan terima kasih kepada Direktorat Pendidikan Tinggi, Departemen Pendidikan dan Kebudayaan Republik Indonesia yang telah memberikan dukungan finansial melalui Beasiswa Bidik Misi tahun 2010--2014. Penulis juga diperkenankan menyampaikan ucapan terima kasih kepada sponsor penyedia dana penelitian.
+
+% --- Daftar pustaka: IEEEtran, numerik, urut sitasi ------------------------
+% \nocite{*} menampilkan seluruh 30 contoh di references.bib (nomor [1]-[30]
+% mengikuti urutan template resmi; [31] di template resmi kosong).
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
