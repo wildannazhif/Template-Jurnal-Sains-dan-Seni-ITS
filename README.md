@@ -1,77 +1,92 @@
-# Jurnal Sains dan Seni ITS — Template LaTeX
+# Jurnal Sains dan Seni ITS — Template LaTeX + Agent Skill
 
-Template LaTeX untuk artikel **Jurnal Sains dan Seni ITS** (luaran Tugas Akhir S1 ITS / POMITS), dikonversi setia dari template resmi Word ITS sehingga tampilannya sama persis: teks, huruf, ukuran, warna, spasi, heading, judul — semuanya.
+Template LaTeX untuk artikel **Jurnal Sains dan Seni ITS** (luaran Tugas Akhir S1 ITS / POMITS), dikonversi dari template resmi Word ITS — teks, huruf, ukuran, warna, spasi, heading, judul, semuanya diukur langsung dari berkas resmi.
 
-> **Bukan template resmi ITS.** Template resmi hanya tersedia dalam Word (`.doc`). Repo ini adalah konversi komunitas ke LaTeX yang divalidasi terhadap berkas resmi. Selalu cek pedoman terbaru jurnal sebelum submit.
+Repo ini sekaligus adalah **Agent Skill** (`jurnal-sains-seni-its`): pasang sekali, lalu agent menuliskan artikel berformat jurnal ini dari bahan penelitianmu sampai jadi PDF.
 
-Sumber resmi yang dipakai sebagai acuan:
+> **Bukan template resmi ITS.** Template resmi hanya tersedia dalam Word (`.doc`). Repo ini konversi komunitas ke LaTeX yang divalidasi terhadap berkas resmi. Cek pedoman terbaru jurnal sebelum submit.
+
+Acuan resmi:
 
 - Template Word: [3a.-Templat-artikel-Jurnal-Sains-dan-Seni-ITS.doc](https://www.its.ac.id/drpm/wp-content/uploads/sites/71/2021/08/3a.-Templat-artikel-Jurnal-Sains-dan-Seni-ITS.doc) (DRPM ITS)
 - Template PDF: [3a.-Templat-artikel-Jurnal-Sains-dan-Seni-ITS.pdf](https://www.its.ac.id/dkv/wp-content/uploads/sites/102/2018/03/3a.-Templat-artikel-Jurnal-Sains-dan-Seni-ITS.pdf)
 - Jurnal: <https://ejurnal.its.ac.id/index.php/sains_seni> — p-ISSN 2301-928X, e-ISSN 2337-3520
 
-## Hasil
+## Instalasi skill
 
-| | |
-|---|---|
-| Kertas | A4 (210 × 297 mm) |
-| Layout | Dua kolom |
-| Huruf | Times New Roman 10 pt (klon `newtxtext` di pdfLaTeX) |
-| Judul | Times New Roman 24 pt, rata tengah |
-| Abstrak | 9 pt **bold**, satu paragraf, 100–300 kata |
-| Kata kunci | 9 pt **bold**, maksimal 5, urutan alfabet |
-| Heading bab | 10 pt, HURUF KAPITAL, rata tengah, angka Romawi (I., II., …) |
-| Subbagian | 10 pt *italic*, rata kiri, huruf (A., B., …) |
-| Daftar pustaka | 8 pt, sitasi numerik `[1]`, gaya IEEE |
-
-Spesifikasi lengkap yang terukur ada di [`docs/FORMAT-SPEC.md`](docs/FORMAT-SPEC.md), dan hasil validasi terhadap PDF resmi ada di [`docs/VALIDATION.md`](docs/VALIDATION.md).
-
-## Pakai
-
-### Prasyarat
-
-TeX Live lengkap (pdfLaTeX + BibTeX + `IEEEtran.bst`):
-
-```bash
-# Debian/Ubuntu
-sudo apt install texlive-latex-base texlive-latex-recommended \
-  texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra \
-  texlive-publishers texlive-lang-other
-```
-
-Atau pakai Overleaf: unggah `its-jurnal.cls`, `main.tex`, `references.bib`, dan folder `figures/` — lalu compile dengan pdfLaTeX.
-
-### Kompilasi
-
-```bash
-./scripts/build.sh        # latexmk -pdf main.tex
-# hasil: main.pdf
-```
-
-### Menulis artikel Anda
-
-1. Salin repo ini, atau salin `its-jurnal.cls` + `main.tex` + `references.bib` ke proyek Anda.
-2. Isi metadata di `main.tex`: `\title`, `\author`, `\affiliation`, `\email` (dan `\runninghead{Vol. X, No. Y (TAHUN)}` bila sudah tahu volume/nomor).
-3. Tulis abstrak di `abstract` (100–300 kata, satu paragraf, tanpa sitasi) dan kata kunci di `\keywords{...}` (maksimal 5, alfabet, Title Case).
-4. Tulis isi dengan `\section{...}` (otomatis jadi kapital + angka Romawi), `\subsection{...}` (otomatis huruf A., B., …), gambar dengan `figure`, tabel dengan `table`, persamaan dengan `equation`.
-5. Isi `references.bib` dengan referensi Anda — **jangan membuat referensi fiktif**. Contoh 30 referensi di `references.bib` adalah contoh format dari template resmi; hapus dan ganti dengan referensi sungguhan.
-6. Kompilasi, lalu jalankan `./scripts/check-format.py main.pdf` untuk memeriksa ukuran halaman, huruf, dan geometri kolom.
-
-## Untuk AI Agent (skill)
-
-Repo ini sekaligus adalah **Agent Skill** yang bisa dipasang di Claude Code, Codex, Hermes Agent, dan agent lain yang mendukung format Agent Skills:
-
-```
-skills/jurnal-sains-seni-its/SKILL.md
-```
-
-Pasang dengan:
+Skill mengikuti standar terbuka [Agent Skills](https://agentskills.io) (`SKILL.md` + frontmatter `name`/`description`); satu folder yang sama dipakai lintas harness.
 
 ```bash
 npx skills add wildannazhif/Template-Jurnal-Sains-dan-Seni-ITS
 ```
 
-Lalu minta agent: *"Buatkan artikel Jurnal Sains dan Seni ITS dari hasil penelitian saya"* — agent akan menulis mengikuti `SKILL.md` dan kelas ini, memeriksa angka/sitasi, lalu mengompilasi PDF-nya. Aturan main untuk agent ada di [`AGENTS.md`](AGENTS.md).
+Atau salin `skills/jurnal-sains-seni-its/` secara manual:
+
+| Harness | User scope | Repo/workspace scope | Invoke |
+|---|---|---|---|
+| Claude Code | `~/.claude/skills/` | `<repo>/.claude/skills/` | `/jurnal-sains-seni-its`, atau otomatis |
+| Google Antigravity | `~/.gemini/config/skills/` | `<workspace>/.agents/skills/` | otomatis, cek dengan `/skills` |
+| OpenAI Codex | `~/.agents/skills/` | `<repo>/.agents/skills/` | `$jurnal-sains-seni-its`, `/skills` |
+| Lainnya (Cursor, Gemini CLI, Copilot/VS Code, OpenCode, Junie, Hermes) | `~/.agents/skills/` | `.agents/skills/` | sesuai docs masing-masing |
+
+Restart session setelah instalasi — skill didaftarkan saat sesi dimulai. Di Codex, alternatif instalasi: `$skill-installer install https://github.com/wildannazhif/Template-Jurnal-Sains-dan-Seni-ITS/tree/main/skills/jurnal-sains-seni-its`.
+
+> Skill merujuk `its-jurnal.cls`, `main.tex`, dan `references.bib` dari root repo — agent mengambilnya dari repo (clone/raw) saat mengompilasi. Simpan clone repo ini di tempat yang mudah dijangkau agent.
+
+## Penggunaan
+
+```
+Buatkan artikel Jurnal Sains dan Seni ITS dari hasil penelitian saya.
+Judul: "Pengaruh Suhu terhadap Kuat Tekan Beton".
+Penulis: Budi Santoso, Departemen Teknik Sipil ITS, budi@email.com.
+Hasil dan data: [ringkasan, angka, tabel, gambar]
+Referensi: [daftar pustaka / DOI]
+```
+
+Alur agent (lihat `skills/jurnal-sains-seni-its/SKILL.md` dan `AGENTS.md`):
+
+1. Kumpulkan metadata, data, dan referensi yang belum diberikan.
+2. Tulis artikel di `main.tex` + `references.bib` memakai `its-jurnal.cls` — jangan menulis format manual di `.tex` (`\fontsize`, margin, `\section` kapital manual); kelas sudah mengatur semuanya.
+3. Kompilasi (`latexmk -pdf`) dan validasi (`./scripts/check-format.py main.pdf`), lalu serahkan PDF beserta `.tex`/`.bib`.
+
+Aturan keras: **tidak ada referensi fiktif** (setiap entri `.bib` harus sumber nyata terverifikasi; semua nama penulis lengkap, tanpa `et al.`/`dkk.`); jangan mengubah angka format di `its-jurnal.cls` — `docs/FORMAT-SPEC.md` adalah sumber kebenaran; jangan mengubah data/sitasi pengguna tanpa konfirmasi.
+
+## Manual (tanpa agent)
+
+Prasyarat: pdfLaTeX + BibTeX + `IEEEtran.bst` (TeX Live lengkap, atau TinyTeX untuk instalasi minimal). Alternatif tanpa instalasi: **Overleaf** — unggah `its-jurnal.cls`, `main.tex`, `references.bib`, folder `figures/`, compile dengan pdfLaTeX.
+
+```bash
+./scripts/build.sh                  # latexmk -pdf main.tex -> main.pdf
+./scripts/check-format.py main.pdf  # cek halaman, huruf, geometri kolom
+```
+
+Menulis artikel: isi `\title`, `\author`, `\affiliation`, `\email` (dan `\runninghead{Vol. X, No. Y (TAHUN)}` bila diketahui); abstrak 100–300 kata, satu paragraf, tanpa sitasi; `\keywords{...}` maksimal 5, alfabet, Title Case; isi dengan `\section` (otomatis kapital + angka Romawi) dan `\subsection` (otomatis huruf A., B., …); gambar `figure` + `\caption` di bawah, tabel `table` + `\caption` di atas (tanpa garis vertikal), persamaan `equation` + `\eqref`; sitasi `\cite{kunci}` → `[1]`. Hapus 30 entri contoh di `references.bib` dan ganti dengan referensi sungguhan.
+
+## Format (ringkas)
+
+| Elemen | Format |
+|---|---|
+| Kertas | A4 210×297 mm; margin atas/bawah 50,5 pt, kiri/kanan 46,8 pt |
+| Layout | 2 kolom, columnsep 14,4 pt; lebar kolom 243,65 pt |
+| Huruf | Times New Roman 10 pt, justify, indent 10,1 pt |
+| Judul | 24 pt, rata tengah |
+| Penulis/afiliansi/e-mail | 11 pt, rata tengah |
+| Abstrak | 9 pt **bold**, satu paragraf, 100–300 kata |
+| Kata kunci | 9 pt **bold**, maks. 5, alfabet |
+| Heading bab | 10 pt, KAPITAL, rata tengah, angka Romawi |
+| Subbagian | 10 pt *italic*, rata kiri, huruf |
+| Keterangan gambar | 8 pt, justify, di bawah (`Gambar 1.  ...`) |
+| Judul tabel | 8 pt, rata tengah, di atas; tanpa garis vertikal |
+| Daftar pustaka | 8 pt, sitasi numerik `[1]`, gaya IEEE |
+
+Spesifikasi terukur: [`docs/FORMAT-SPEC.md`](docs/FORMAT-SPEC.md). Hasil validasi vs PDF resmi: [`docs/VALIDATION.md`](docs/VALIDATION.md). Konvensi: artikel 6–8 halaman; desimal koma (`0,25`), pengali `×`, ketidakpastian `±`, satuan SI; penekanan *italic*, bukan underline; titik akhir kalimat setelah kurung siku sitasi.
+
+## Troubleshooting
+
+- **Skill tidak ter-load:** restart session; pastikan folder bernama persis `jurnal-sains-seni-its` dan berisi `SKILL.md`; panggil manual (`/jurnal-sains-seni-its` di Claude Code, `$jurnal-sains-seni-its` di Codex, `/skills` di Antigravity). Auto-trigger bergantung pada `description` — awali prompt dengan *"Buatkan artikel Jurnal Sains dan Seni ITS …"*.
+- **Compile gagal:** pastikan `pdflatex`, `bibtex`, dan `IEEEtran.bst` tersedia; cek warning `Overfull \hbox` (jangan diabaikan); fallback ke Overleaf atau instal TinyTeX.
+- **Artikel kepanjangan (>8 halaman):** padatkan isi — jangan mengubah font/margin/spasi.
+- **Skill ini tidak berlaku** untuk Jurnal Teknik ITS, buku TA, atau skripsi — formatnya berbeda.
 
 ## Struktur repo
 
@@ -96,19 +111,6 @@ Lalu minta agent: *"Buatkan artikel Jurnal Sains dan Seni ITS dari hasil penelit
 │   └── template-its.doc            # template resmi ITS (Word, sumber ukuran)
 └── .github/workflows/build.yml     # CI: compile tiap push, unggah PDF
 ```
-
-## Aturan gaya selingkung (ringkas)
-
-Dari template resmi — selengkapnya di `docs/FORMAT-SPEC.md`:
-
-- Artikel 6–8 halaman, kertas A4.
-- Abstrak 100–300 kata; kata kunci maksimal 5.
-- Struktur umum: PENDAHULUAN, URAIAN PENELITIAN, PETUNJUK TAMBAHAN, PRINSIP-PRINSIP PUBLIKASI, KESIMPULAN/RINGKASAN — sesuaikan dengan bidang ilmu dan dosen pembimbing.
-- Gambar: keterangan di bawah, rata kiri-kanan, 8 pt (`Gambar 1.  ...`); tabel: judul di atas, rata tengah, 8 pt; tanpa garis vertikal.
-- Persamaan bernomor di margin kanan `(1)`; simbol miring, satuan tegak.
-- Sitasi numerik `[1]`; titik akhir kalimat setelah kurung siku. Semua nama penulis ditulis lengkap — tanpa `et al.`/`dkk.`
-- Desimal memakai koma (`0,25`), pengali `×` (`2,4×10⁻⁶`), ketidakpastian `±` (`2,58±0,07`), satuan SI.
-- Penekanan makna memakai *italic*, bukan underline.
 
 ## Lisensi
 
